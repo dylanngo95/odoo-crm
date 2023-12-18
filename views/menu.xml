@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="menu_court_customer_point"
+            name="Courts Customer Point"
+            sequence="0"
+    />
+
+</odoo>

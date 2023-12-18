@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="courts_crm.action_window">
+            <field name="name">courts_crm window</field>
+            <field name="res_model">courts_crm.courts_crm</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+                id="menu_court_customer_point_view"
+                name="Points"
+                parent="menu_court_customer_point"
+                action="courts_crm.action_window"
+                sequence="0"
+        />
+    </data>
+</odoo>
