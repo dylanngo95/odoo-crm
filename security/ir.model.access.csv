@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_courts_crm_courts_crm,courts_crm.courts_crm,model_courts_crm_courts_crm,base.group_user,1,1,1,1
+access_courts_crm_courts_crm,courts_crm.customer_point,model_courts_crm_courts_crm,base.group_user,1,1,1,1

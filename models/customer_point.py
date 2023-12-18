@@ -2,10 +2,17 @@
 
 from odoo import api, fields, models
 
-class Customer_Point(models.Model):
-    _name = "courts.customer_point"
-    _description = "This module include customer service and loyalty service"
-    user_id = fields.Integer(string = 'Customer Id', required = True)
-    order_id = fields.Integer(string = 'Order Id', required = True)
-    point = fields.Float(string = 'Customer Earn Point', required = True)
-    amount_spent = fields.Float(string = 'Amount Spent', required = True)
+class customer_point(models.Model):
+    _name = 'courts_crm.customer_point'
+    _description = 'courts_crm.customer_point'
+
+    name = fields.Char()
+    value = fields.Integer()
+    value2 = fields.Float(compute="_value_pc", store=True)
+    description = fields.Text()
+
+
+    @api.depends('value')
+    def _value_pc(self):
+        for record in self:
+            record.value2 = float(record.value) / 100
