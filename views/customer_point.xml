@@ -3,7 +3,7 @@
     <data>
 
         <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="courts_crm_points_list">
+        <record id="courts_crm_points_list" model="ir.ui.view">
             <field name="name">courts_crm_points list</field>
             <field name="model">courts_crm.customer_points</field>
             <field name="arch" type="xml">
@@ -18,9 +18,23 @@
 
         <!-- actions opening views on models -->
         <record id="courts_crm_points_action_window" model="ir.actions.act_window">
-            <field name="name">Odoo CRM</field>
+            <field name="name">courts_crm_points window</field>
             <field name="res_model">courts_crm.customer_points</field>
             <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+        <record model="ir.actions.server" id="courts_crm_points_action_server">
+            <field name="name">courts_crm_points server</field>
+            <field name="model_id" ref="model_courts_crm_customer_points"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+                }
+            </field>
         </record>
 
         <!-- Top menu item -->
