@@ -23,8 +23,8 @@ This module will include customer service and loyalty service
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        # 'views/views.xml',
-        # 'views/templates.xml',
+        'views/views.xml',
+        'views/templates.xml',
         'views/customer_point.xml',
     ],
     # only loaded in demonstration mode

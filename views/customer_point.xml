@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="courts_crm_points_list">
+            <field name="name">courts_crm_points list</field>
+            <field name="model">courts_crm.customer_points</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="user_id"/>
+                    <field name="points"/>
+                    <field name="expiration_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record id="courts_crm_points_action_window" model="ir.actions.act_window">
+            <field name="name">Odoo CRM</field>
+            <field name="res_model">courts_crm.customer_points</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <!-- Top menu item -->
         <menuitem
                 id="courts_crm_main_menu"
                 name="Odoo CRM"
-                action="courts_crm_main_action"
-                sequence="1"
+                action="courts_crm_points_action_window"
+                sequence="10"
         />
-
-        <record id="courts_crm_main_action" model="ir.actions.act_window">
-            <field name="name">Odoo CRM View</field>
-            <field name="res_model">courts_crm.customer_point</field>
-            <field name="view_mode">tree,form</field>
-        </record>
     </data>
 </odoo>
